@@ -1,8 +1,8 @@
 pacman -S --noconfirm \
-	base-devel git curl wget vim tmux zsh cronie wireguard-tools chezmoi \
+    base-devel git curl wget vim tmux zsh cronie wireguard-tools chezmoi \
     exa ripgrep fzf htop bat duf fd jq procs tree starship \
-	nodejs npm python python-pip go \
-	docker docker-compose 
+    nodejs npm python python-pip go \
+    docker docker-compose 
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 

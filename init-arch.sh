@@ -17,6 +17,7 @@ if [ "$USE_CHINA_SOURCE" = true ]; then
   sudo sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
   sudo sed -i '1i Server = http://mirrors.163.com/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
   sudo sed -i '2i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+  sudo pacman -Syyu
 fi
 
 pacman -S --noconfirm \

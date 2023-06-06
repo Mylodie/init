@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts "h:g:s" opt; do
+while getopts "h:g:c" opt; do
   case $opt in
     h) echo "Usage: $0 [-g GIT_SERVICE_URL] [-s]"; exit 0;;
     g) GIT_SERVICE_URL=$OPTARG;;

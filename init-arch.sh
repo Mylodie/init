@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -eux
+set -o pipefail
+
 while getopts "h:g:c" opt; do
   case $opt in
     h) echo "Usage: $0 [-g GIT_SERVICE_URL] [-s]"; exit 0;;
@@ -14,6 +17,7 @@ if [ -z "$GIT_SERVICE_URL" ]; then
 fi
 
 if [ "$USE_CHINA_SOURCE" = true ]; then
+  echo "" > /etc/pacman.d/mirrorlist
   sudo sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
   sudo sed -i '1i Server = http://mirrors.163.com/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
   sudo sed -i '2i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
